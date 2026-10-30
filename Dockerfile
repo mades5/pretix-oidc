@@ -1,4 +1,11 @@
 FROM pretix/standalone:2026.9.0
 USER root
-RUN python -m pip install --no-cache-dir "pretix-oidc==2.3.1"
+# Keycloak OIDC
+RUN python -m pip install --no-cache-dir \
+    "pretix-oidc==2.3.1"
+# Community Seating
+RUN python -m pip install --no-cache-dir \
+    "git+https://github.com/14praveenk/pretix-seating.git"
+# Frontend-Assets
+RUN cd /pretix/src && make production
 USER pretixuser
