@@ -3,7 +3,7 @@ USER root
 RUN python -m pip install --no-cache-dir \
     "pretix-oidc==2.3.1"
 RUN python -m pip install --no-cache-dir --no-build-isolation \
-    "git+https://github.com/maximal7000/pretix-seatingsale.git"
+    "git+https://github.com/mades5/pretix-seatingsale.git"
 RUN python -m pip install --no-cache-dir \
     "pretix-event-css-js"
 RUN cd /pretix/src && make production
